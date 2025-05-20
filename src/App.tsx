@@ -16,21 +16,10 @@ export const App: React.FC = () => {
   };
 
   const showItems = (values: string[] | number[]) => {
-    let showValues = values.slice(
+    const showValues = values.slice(
       (currentPage - 1) * perPage,
       currentPage * perPage,
     );
-
-    if (currentPage < pages) {
-      showValues = values.slice(
-        (currentPage - 1) * perPage,
-        perPage * currentPage,
-      );
-    }
-
-    if (currentPage === pages) {
-      showValues = values.slice((currentPage - 1) * perPage, values.length);
-    }
 
     return showValues;
   };
